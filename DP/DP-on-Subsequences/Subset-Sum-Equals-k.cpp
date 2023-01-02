@@ -27,7 +27,7 @@ public:
         vector<vector<bool>> dp(n, vector<bool>(sum + 1, false));
         
         for(int i=0; i<n; i++) dp[i][0] = true;
-        dp[0][arr[0]] = true;
+        if(nums[0] <= sum) dp[0][arr[0]] = true;
         
         for(int i=1; i<n; i++) {
             for(int t=1; t<=sum; t++) {
@@ -49,7 +49,7 @@ public:
         vector<bool> dp(sum + 1), temp(sum + 1);
         
         dp[0] = true;
-        dp[arr[0]] = true;
+        if(nums[0] <= sum) dp[arr[0]] = true;
         
         for(int i=1; i<n; i++) {
             // vector<bool> temp(sum + 1);
